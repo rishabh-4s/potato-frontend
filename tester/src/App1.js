@@ -15,7 +15,7 @@ function App() {
 
     console.log("hello")
     try {
-      const response = await axios.post('http://localhost:8000/predict', formData, {
+      const response = await axios.post('http://15.207.55.79/predict', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
