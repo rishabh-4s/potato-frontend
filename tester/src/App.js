@@ -26,6 +26,7 @@ function App() {
       const solutionArray = JSON.parse(response.data.solution);
       const solutions = Object.values(solutionArray);
       setSolutions(solutions);
+      setImage(URL.createObjectURL(file));
     } catch (error) {
       console.error('Error uploading image:', error);
       // Handle error here
@@ -45,6 +46,7 @@ function App() {
         </label>
         <input type="file" id="file-upload" onChange={handleImageUpload} />
       </div>
+      {image && <img src={image} alt="Uploaded" className="uploaded-image" />}
       {result && (
         <div class="result">
           <h2>Result:</h2>
